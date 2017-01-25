@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B19EDE71E391665000DC20A /* Mp3TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B19EDE61E391665000DC20A /* Mp3TableViewController.swift */; };
 		0BAD56301E38AC85008C8CE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAD562F1E38AC85008C8CE0 /* AppDelegate.swift */; };
 		0BAD56321E38AC85008C8CE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAD56311E38AC85008C8CE0 /* ViewController.swift */; };
 		0BAD56351E38AC85008C8CE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BAD56331E38AC85008C8CE0 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B19EDE61E391665000DC20A /* Mp3TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mp3TableViewController.swift; sourceTree = "<group>"; };
 		0BAD562C1E38AC85008C8CE0 /* xx5kmp3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xx5kmp3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BAD562F1E38AC85008C8CE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BAD56311E38AC85008C8CE0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				0BAD563B1E38AC85008C8CE0 /* LaunchScreen.storyboard */,
 				0BAD563E1E38AC85008C8CE0 /* Info.plist */,
 				0BAD56361E38AC85008C8CE0 /* xx5kmp3.xcdatamodeld */,
+				0B19EDE61E391665000DC20A /* Mp3TableViewController.swift */,
 			);
 			path = xx5kmp3;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				0BAD56321E38AC85008C8CE0 /* ViewController.swift in Sources */,
 				0BAD56381E38AC85008C8CE0 /* xx5kmp3.xcdatamodeld in Sources */,
 				0BAD56301E38AC85008C8CE0 /* AppDelegate.swift in Sources */,
+				0B19EDE71E391665000DC20A /* Mp3TableViewController.swift in Sources */,
 				0BAD56491E38AE18008C8CE0 /* INSDataStackContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
