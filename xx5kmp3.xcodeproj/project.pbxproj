@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B0E20F81E391898004E98DA /* mname.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0E20F71E391898004E98DA /* mname.swift */; };
 		0B19EDE71E391665000DC20A /* Mp3TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B19EDE61E391665000DC20A /* Mp3TableViewController.swift */; };
 		0BAD56301E38AC85008C8CE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAD562F1E38AC85008C8CE0 /* AppDelegate.swift */; };
 		0BAD56321E38AC85008C8CE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAD56311E38AC85008C8CE0 /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B0E20F71E391898004E98DA /* mname.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mname.swift; sourceTree = "<group>"; };
 		0B19EDE61E391665000DC20A /* Mp3TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mp3TableViewController.swift; sourceTree = "<group>"; };
 		0BAD562C1E38AC85008C8CE0 /* xx5kmp3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xx5kmp3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BAD562F1E38AC85008C8CE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				0BAD563E1E38AC85008C8CE0 /* Info.plist */,
 				0BAD56361E38AC85008C8CE0 /* xx5kmp3.xcdatamodeld */,
 				0B19EDE61E391665000DC20A /* Mp3TableViewController.swift */,
+				0B0E20F71E391898004E98DA /* mname.swift */,
 			);
 			path = xx5kmp3;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				0BAD564B1E38AE18008C8CE0 /* INSPersistentStoreDescription.swift in Sources */,
 				0BAD564A1E38AE18008C8CE0 /* INSPersistentContainer.swift in Sources */,
 				0BAD564C1E38AE18008C8CE0 /* NSManagedObjectContext+iOS10Additions.swift in Sources */,
+				0B0E20F81E391898004E98DA /* mname.swift in Sources */,
 				0BAD56321E38AC85008C8CE0 /* ViewController.swift in Sources */,
 				0BAD56381E38AC85008C8CE0 /* xx5kmp3.xcdatamodeld in Sources */,
 				0BAD56301E38AC85008C8CE0 /* AppDelegate.swift in Sources */,
