@@ -7,14 +7,21 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    
+    var arrPlayer = [AVAudioPlayer]()
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        
+        for i in 0..<gName.count {
+            initAudio(row: i)
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -35,6 +42,33 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.didReceiveMemoryWarning()
     }
 
+    func initAudio(row:Int) {
+        let name = gName[row]
+        
+        var player = AVAudioPlayer()
+        let path = Bundle.main.path(forResource: name, ofType: "mp3")!
+        do {
+            player = try AVAudioPlayer(contentsOf: URL(string: path)!)
+            player.prepareToPlay()
+            player.numberOfLoops = -1
+//            player.play()
+            arrPlayer.append(player)
+        } catch let err as NSError {
+            print(err.debugDescription)
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+        
+        for i in 0..<gName.count {
+            arrPlayer[i].stop()
+        }
+        
+        let player = arrPlayer[indexPath.row]
+        player.play()
+    }
 
 }
 
