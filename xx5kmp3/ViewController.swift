@@ -8,16 +8,29 @@
 
 import UIKit
 import AVFoundation
+import CoreData
+
+
+let appDelegate = UIApplication.shared.delegate as! AppDelegate
+let context = appDelegate.persistentContainer.viewContext
+
+var arrGlobalSet:[CurGlobalSet] = []
+var nowGlobalSet:CurGlobalSet?
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var btnPlay: UIButton!
+    @IBOutlet weak var labelStart: UILabel!
+    @IBOutlet weak var labelEnd: UILabel!
+    @IBOutlet weak var sliderTime: UISlider!
     
     var arrPlayer = [AVAudioPlayer]()
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        firstOpenAPP()
         
         for i in 0..<gName.count {
             initAudio(row: i)
@@ -70,5 +83,39 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         player.play()
     }
 
+    // 获取数据
+    func getCoreData() -> Void {
+        arrGlobalSet = []
+        do {
+            arrGlobalSet = try context.fetch(CurGlobalSet.fetchRequest())
+        }catch {
+            print("Setting coreData error")
+        }
+        
+        if arrGlobalSet.count > 0 {
+            nowGlobalSet = arrGlobalSet[0]
+        }
+    }
+    
+    // 第一次打开app，加入测试数据
+    func firstOpenAPP() -> Void {
+        getCoreData()
+        
+        // 初始化
+        if arrGlobalSet.count > 0 {
+            return
+        }
+        let oneGlobalSet = NSEntityDescription.insertNewObject(forEntityName: "CurGlobalSet", into: context) as! CurGlobalSet
+        
+        
+        oneGlobalSet.curIndex = 0
+        oneGlobalSet.openCount = 1      // 打开app次数
+        oneGlobalSet.evaluate = 0       // 是否评分
+        
+        context.insert(oneGlobalSet)
+        appDelegate.saveContext()
+        
+        getCoreData()
+    }
 }
 
