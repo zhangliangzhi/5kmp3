@@ -17,6 +17,7 @@ let context = appDelegate.persistentContainer.viewContext
 var arrGlobalSet:[CurGlobalSet] = []
 var nowGlobalSet:CurGlobalSet?
 
+
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
@@ -26,6 +27,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var sliderTime: UISlider!
     
     var arrPlayer = [AVAudioPlayer]()
+    
+    var timer:Timer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -35,6 +39,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         for i in 0..<gName.count {
             initAudio(row: i)
         }
+
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tickDown), userInfo: nil, repeats: true)
+    }
+    
+    func tickDown() -> Void {
+        print("tick down")
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -80,6 +90,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
         let player = arrPlayer[indexPath.row]
+        player.currentTime = 120
         player.play()
     }
 
