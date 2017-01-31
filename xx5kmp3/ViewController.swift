@@ -29,6 +29,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var arrPlayer = [AVAudioPlayer]()
     
     var timer:Timer!
+    var curTime:Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,7 +91,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
         let player = arrPlayer[indexPath.row]
-        player.currentTime = 120
+        player.currentTime = 0
         player.play()
     }
 
@@ -127,6 +128,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         appDelegate.saveContext()
         
         getCoreData()
+    }
+    
+    func initUI() -> Void {
+        
     }
 }
 
