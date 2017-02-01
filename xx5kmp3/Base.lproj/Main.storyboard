@@ -65,13 +65,39 @@
                                         <rect key="frame" x="322" y="40" width="40" height="40"/>
                                         <state key="normal" image="icon_kjb1"/>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="快退1秒" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1PE-5E-v7D">
+                                        <rect key="frame" x="113.66666666666666" y="25" width="52.999999999999972" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="快退5秒" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9A-nM-SXP">
+                                        <rect key="frame" x="50.666666666666671" y="25" width="55.000000000000014" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="快进1秒" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2Y-w6-gTw">
+                                        <rect key="frame" x="247.66666666666669" y="25" width="53.000000000000057" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="快进5秒" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVJ-pe-Pnz">
+                                        <rect key="frame" x="309.66666666666669" y="25" width="55" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="1PE-5E-v7D" firstAttribute="leading" secondItem="W9A-nM-SXP" secondAttribute="trailing" constant="8" id="0vm-RV-NBf"/>
                                     <constraint firstItem="8O1-iw-l2a" firstAttribute="centerY" secondItem="PJp-Iu-Vbr" secondAttribute="centerY" id="7SO-tz-ZU2"/>
                                     <constraint firstItem="oKd-On-mPA" firstAttribute="centerY" secondItem="8O1-iw-l2a" secondAttribute="centerY" id="C2f-gR-H3h"/>
                                     <constraint firstItem="oKd-On-mPA" firstAttribute="leading" secondItem="8O1-iw-l2a" secondAttribute="trailing" constant="25" id="Ftx-jt-sCz"/>
                                     <constraint firstAttribute="height" constant="90" id="Fvs-Y4-J0R"/>
+                                    <constraint firstItem="1PE-5E-v7D" firstAttribute="centerX" secondItem="4Y2-Qs-6fU" secondAttribute="centerX" constant="3" id="IEA-5a-uBx"/>
                                     <constraint firstItem="A2f-ev-VBB" firstAttribute="centerY" secondItem="GoW-jk-KAC" secondAttribute="centerY" id="Kx6-xQ-mAZ"/>
                                     <constraint firstItem="PJp-Iu-Vbr" firstAttribute="centerX" secondItem="oO8-zz-SgV" secondAttribute="centerX" id="O1c-Bk-vJh"/>
                                     <constraint firstItem="PJp-Iu-Vbr" firstAttribute="leading" secondItem="4Y2-Qs-6fU" secondAttribute="trailing" constant="20" id="OGB-1e-QA3"/>
@@ -81,11 +107,17 @@
                                     <constraint firstItem="4Y2-Qs-6fU" firstAttribute="centerY" secondItem="PJp-Iu-Vbr" secondAttribute="centerY" id="TZo-7Y-cBu"/>
                                     <constraint firstItem="A2f-ev-VBB" firstAttribute="leading" secondItem="GoW-jk-KAC" secondAttribute="trailing" constant="10" id="UMc-It-xs4"/>
                                     <constraint firstItem="GoW-jk-KAC" firstAttribute="leading" secondItem="aL3-1o-HgM" secondAttribute="trailing" constant="10" id="XH6-xI-1tF"/>
+                                    <constraint firstItem="4Y2-Qs-6fU" firstAttribute="top" secondItem="1PE-5E-v7D" secondAttribute="bottom" constant="-3" id="br6-Cg-Qae"/>
                                     <constraint firstItem="8O1-iw-l2a" firstAttribute="leading" secondItem="PJp-Iu-Vbr" secondAttribute="trailing" constant="20" id="cpK-7L-y7z"/>
+                                    <constraint firstItem="zVJ-pe-Pnz" firstAttribute="centerY" secondItem="o2Y-w6-gTw" secondAttribute="centerY" id="gWo-eN-057"/>
                                     <constraint firstItem="1JO-Ax-slC" firstAttribute="centerY" secondItem="4Y2-Qs-6fU" secondAttribute="centerY" id="huV-sk-kAT"/>
                                     <constraint firstAttribute="bottom" secondItem="PJp-Iu-Vbr" secondAttribute="bottom" id="i6K-M6-bWX"/>
+                                    <constraint firstItem="o2Y-w6-gTw" firstAttribute="centerX" secondItem="8O1-iw-l2a" secondAttribute="centerX" constant="-3" id="ohJ-lc-39p"/>
                                     <constraint firstItem="aL3-1o-HgM" firstAttribute="centerY" secondItem="GoW-jk-KAC" secondAttribute="centerY" id="rGW-kt-2f5"/>
+                                    <constraint firstItem="zVJ-pe-Pnz" firstAttribute="leading" secondItem="o2Y-w6-gTw" secondAttribute="trailing" constant="9" id="s1r-ac-Mwn"/>
                                     <constraint firstItem="aL3-1o-HgM" firstAttribute="leading" secondItem="oO8-zz-SgV" secondAttribute="leading" constant="8" id="svL-aO-SPN"/>
+                                    <constraint firstItem="8O1-iw-l2a" firstAttribute="top" secondItem="o2Y-w6-gTw" secondAttribute="bottom" constant="-3" id="t7o-gU-a63"/>
+                                    <constraint firstItem="W9A-nM-SXP" firstAttribute="centerY" secondItem="1PE-5E-v7D" secondAttribute="centerY" id="wdv-su-7kZ"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UFJ-Yc-s1q">
@@ -124,7 +156,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cgD-XQ-Qph" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1626.4000000000001" y="-29.23538230884558"/>
+            <point key="canvasLocation" x="1626.0869565217392" y="-29.347826086956523"/>
         </scene>
     </scenes>
     <resources>
