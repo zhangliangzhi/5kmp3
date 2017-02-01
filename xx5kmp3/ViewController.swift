@@ -15,6 +15,7 @@ let appDelegate = UIApplication.shared.delegate as! AppDelegate
 let context = appDelegate.persistentContainer.viewContext
 
 var arrGlobalSet:[CurGlobalSet] = []
+var arrYbSec:[YbTime] = []
 var nowGlobalSet:CurGlobalSet?
 
 
@@ -30,6 +31,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var timer:Timer!
     var curTime:Int = 0
+    var curRow:Int = -1
+    var isPlaying:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +49,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tickDown() -> Void {
         print("tick down")
+        curTime = curTime + 1
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -86,13 +90,35 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
         
-        for i in 0..<gName.count {
-            arrPlayer[i].stop()
+        if curRow == indexPath.row {
+            
+        }else {
+            curRow = indexPath.row
+            for i in 0..<gName.count {
+                arrPlayer[i].stop()
+            }
         }
         
-        let player = arrPlayer[indexPath.row]
-        player.currentTime = 0
-        player.play()
+        
+        if isPlaying {
+            //  暂停
+            isPlaying = false
+            curTime = 0
+            appDelegate.saveContext()
+        }else {
+            // 播放
+            isPlaying = true
+            let player = arrPlayer[indexPath.row]
+            player.play()
+        }
+        
+        
+        
+
+    }
+    
+    func playPause() -> Void {
+        
     }
 
     // 获取数据
@@ -101,7 +127,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         do {
             arrGlobalSet = try context.fetch(CurGlobalSet.fetchRequest())
         }catch {
-            print("Setting coreData error")
+            print("coreData CurGlobalSet error")
+        }
+        
+        do {
+            arrYbSec = try context.fetch(YbTime.fetchRequest())
+            print(arrYbSec.count)
+        }catch{
+            print("coreData YbTime error")
         }
         
         if arrGlobalSet.count > 0 {
@@ -109,7 +142,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    // 第一次打开app，加入测试数据
+    // 第一次打开app，加入初始数据
     func firstOpenAPP() -> Void {
         getCoreData()
         
@@ -123,8 +156,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         oneGlobalSet.curIndex = 0
         oneGlobalSet.openCount = 1      // 打开app次数
         oneGlobalSet.evaluate = 0       // 是否评分
-        
         context.insert(oneGlobalSet)
+        
+        for _ in 0..<14 {
+            let oneYb = NSEntityDescription.insertNewObject(forEntityName: "YbTime", into: context) as! YbTime
+            oneYb.curSec = 0
+            context.insert(oneYb)
+        }
+
         appDelegate.saveContext()
         
         getCoreData()
