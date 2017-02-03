@@ -52,18 +52,30 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Y2-Qs-6fU">
                                         <rect key="frame" x="117" y="40" width="40" height="40"/>
                                         <state key="normal" image="icon_kta1"/>
+                                        <connections>
+                                            <action selector="GoBack1:" destination="GJW-LX-c8R" eventType="touchUpInside" id="Fk6-5M-jem"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1JO-Ax-slC">
                                         <rect key="frame" x="52" y="40" width="40" height="40"/>
                                         <state key="normal" image="icon_ktb1"/>
+                                        <connections>
+                                            <action selector="GoBack5:" destination="GJW-LX-c8R" eventType="touchUpInside" id="M8u-4f-ztB"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8O1-iw-l2a">
                                         <rect key="frame" x="257" y="40" width="40" height="40"/>
                                         <state key="normal" image="icon_kja1"/>
+                                        <connections>
+                                            <action selector="GoNext1:" destination="GJW-LX-c8R" eventType="touchUpInside" id="3yF-zg-7vN"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKd-On-mPA">
                                         <rect key="frame" x="322" y="40" width="40" height="40"/>
                                         <state key="normal" image="icon_kjb1"/>
+                                        <connections>
+                                            <action selector="GoNext5:" destination="GJW-LX-c8R" eventType="touchUpInside" id="Pwj-kx-iCb"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="快退1秒" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1PE-5E-v7D">
                                         <rect key="frame" x="113.66666666666666" y="25" width="52.999999999999972" height="18"/>
@@ -128,7 +140,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2b0-fv-S4T" id="wwk-VK-HTR">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -147,6 +159,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnBack1" destination="4Y2-Qs-6fU" id="DjM-TY-vQO"/>
+                        <outlet property="btnBack5" destination="1JO-Ax-slC" id="egk-fE-EtF"/>
+                        <outlet property="btnNext1" destination="8O1-iw-l2a" id="UqD-fj-PWg"/>
+                        <outlet property="btnNext5" destination="oKd-On-mPA" id="V9r-tW-HAu"/>
                         <outlet property="btnPlay" destination="PJp-Iu-Vbr" id="jwI-WD-ce7"/>
                         <outlet property="labelEnd" destination="A2f-ev-VBB" id="lOy-TK-hEH"/>
                         <outlet property="labelStart" destination="aL3-1o-HgM" id="cMJ-HW-4WO"/>

@@ -26,11 +26,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var labelStart: UILabel!
     @IBOutlet weak var labelEnd: UILabel!
     @IBOutlet weak var sliderTime: UISlider!
+    @IBOutlet weak var btnBack1: UIButton!
+    @IBOutlet weak var btnBack5: UIButton!
+    @IBOutlet weak var btnNext1: UIButton!
+    @IBOutlet weak var btnNext5: UIButton!
     
     var arrPlayer = [AVAudioPlayer]()
     
     var timer:Timer!
-    var curTime:Int = 0
+    var curTime:Int32 = 0
+    var arrCurTime = [Int32]()
     var curRow:Int = -1
     var isPlaying:Bool = false
     
@@ -42,14 +47,30 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         for i in 0..<gName.count {
             initAudio(row: i)
+            arrCurTime.append(0)
         }
 
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tickDown), userInfo: nil, repeats: true)
     }
     
     func tickDown() -> Void {
-        print("tick down")
-        curTime = curTime + 1
+        if isPlaying {
+            curTime = curTime + 1
+        }
+        
+        print("tick down", curTime)
+    }
+    
+    @IBAction func GoBack1(_ sender: Any) {
+    }
+    
+    @IBAction func GoBack5(_ sender: Any) {
+    }
+    
+    @IBAction func GoNext1(_ sender: Any) {
+    }
+    
+    @IBAction func GoNext5(_ sender: Any) {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -87,30 +108,56 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        print("de sel")
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
-        
         if curRow == indexPath.row {
-            
-        }else {
-            curRow = indexPath.row
-            for i in 0..<gName.count {
-                arrPlayer[i].stop()
+            if isPlaying {
+                //  暂停
+                isPlaying = false
+                arrPlayer[curRow].stop()
+                arrCurTime[curRow] = curTime
+                print("pause", curTime)
+            }else {
+                // 播放
+                curTime = arrCurTime[curRow]
+                let player = arrPlayer[curRow]
+                let ctime:Double = Double(curTime)
+                player.currentTime = ctime
+                print("play:", curTime, player.currentTime)
+                player.play()
+                isPlaying = true
             }
-        }
-        
-        
-        if isPlaying {
-            //  暂停
-            isPlaying = false
-            curTime = 0
-            appDelegate.saveContext()
         }else {
-            // 播放
-            isPlaying = true
-            let player = arrPlayer[indexPath.row]
-            player.play()
+            if curRow >= 0 {
+                arrPlayer[curRow].stop()
+            }
+
+            if isPlaying {
+                //  暂停
+                isPlaying = false
+                arrCurTime[curRow] = curTime
+                
+                curRow = indexPath.row
+            }else {
+                // 播放
+                curRow = indexPath.row
+                
+                curTime = arrCurTime[curRow]
+                let player = arrPlayer[curRow]
+                let ctime:Double = Double(curTime)
+                player.currentTime = ctime
+                player.play()
+                isPlaying = true
+            }
+            
+           
         }
+        
+        
+
         
         
         
